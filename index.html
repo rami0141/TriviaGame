@@ -17,11 +17,10 @@
 <!--Introduction-->
 
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-3">Dog Trivia</h1>
-    <p class="lead">Answer as many questions as possible!</p>
+    <h1 class="display-3">Dog Breed Trivia</h1>
+    <p class="lead">Answer as many questions as possible in the time provided!</p>
+    <button type="button" class="btn btn-primary btn-lg">START</button>
     <!--Timer will go here-->
-  </div>
 </div>
 
 
@@ -29,6 +28,11 @@
 <!--Trivia Questions-->
 <div class="container">
 	<div class="row">
+		<div class="col-md-12">
+			<div class="timer"></div>
+		</div>
+	</div>
+		<div class="row">
 		<div class="col-md-12">
 			<p class="question">1. How much does a toy breed dog weight?</p>
 				<ul class="answers">
@@ -144,11 +148,15 @@
 	</div>
 </div>
 
+<div id="results"></div>
+
+
 <footer id="footer" class="site-footer">
 		<div class="container">
 			&copy; Copyright 2017 Cristina Zhang
 		</div>
-
+</footer>
+</div>
 
 
 <!-- adding jQuery -->
