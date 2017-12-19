@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,12 +16,26 @@
 
 <!--Introduction-->
 
-<div class="jumbotron jumbotron-fluid">
-    <h1 class="display-3">Dog Breed Trivia</h1>
-    <p class="lead">Answer as many questions as possible in the time provided!</p>
-    <button type="button" class="btn btn-primary btn-lg">START</button>
-    <!--Timer will go here-->
+   
+<div class="row">
+	<div class="col-md-12">
+		<div class="instructions">
+    		<img class="paws" src="assets/images/dog.JPG" alt="Dog Paws"><img class="paws" src="assets/images/trivia.JPG" alt="Trivia">
+    		<p>Answer as many questions as possible in the time provided!</p>
+    	
+    <!--START BUTTON-->
+    	</div>
+	</div>
 </div>
+    <button type="button" class="btn btn-info btn-lg">START</button>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<img class="dogs" src="assets/images/dogs.JPG" alt="Dog Pictures">
+	</div>
+</div>
+
 
 
 
@@ -29,10 +43,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="timer">Remaining Time: 120</div>
+			<h3 class="timer">Remaining Time: 100</h3>
 		</div>
 	</div>
-		<div class="row">
+	<div class="row">
 		<div class="col-md-12">
 			<p class="question">1. How much does a toy breed dog weight?</p>
 				<ul class="answers">
@@ -144,19 +158,22 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<button type="button" class="btn btn-primary btn-lg">DONE</button>
+			<button type="button" id="done" class="btn btn-info btn-lg">DONE</button>
 		</div>
 	</div>
 </div>
 
-<div id="results"></div>
-
-
-<footer id="footer" class="site-footer">
-		<div class="container">
-			&copy; Copyright 2017 Cristina Zhang
+	<div class="row">
+		<div class="col-md-12">
+			<div id="results"></div>
 		</div>
-</footer>
+	</div>
+</div>
+	
+
+	<footer id="footer" class="site-footer">
+			&copy; Copyright 2017 Cristina Zhang
+	</footer>
 </div>
 
 

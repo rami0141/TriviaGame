@@ -1,14 +1,18 @@
 $(document).ready(function() {
     $(".container").hide();
     $("#timer").hide();
+    $("#results").hide();
+    $("footer").hide();
 
 
 //CLICK START BUTTON -- CONTAINER SHOWS AND COUNTER STARTS
     $(".btn").click(function() {
         $(".container").fadeIn();
+        $("footer").fadeIn();
+        $(".dogs").hide();
         $(this).hide();
 
-            var number = 12;
+            var number = 100;
             var intervalId;  
 
                 function run() {
@@ -23,10 +27,9 @@ $(document).ready(function() {
                 //  Once number hits zero...
                 if (number === 0) {
                     stop();
-
-                 //  Alert the user that time is up.
                     $(".container").hide();
                     result();
+                    $("#results").fadeIn();
 
                     }
                   }
@@ -41,9 +44,16 @@ $(document).ready(function() {
   
     });
 
+    $("#done").click(function() {
+        result();
+        $(".container").hide();
+        $("#results").fadeIn();
+        $("footer").hide();
+
+    })
+
 //QUESTIONS AND ANSWERS 
     var answers = ["c", "d", "a", "d", "b", "a", "d", "b", "c", "a"];
-    var tot = answers.length;
     var correct = 0;
     var incorrect = 0;
     var notAnswered = 0;
@@ -51,27 +61,32 @@ $(document).ready(function() {
     function getCheckedValue( radioName ) {
         var radios = document.getElementsByName( radioName ); // Get radio group by-name
         
-        for(var y=0; y<radios.length; y++)
+        for(var y = 0; y < radios.length; y++) {
             if(radios[y].checked) return radios[y].value; // return the checked value
         }
+    }
 
 
     function result() {
 
-            for (var i = 0; i < tot; i++) {
+            for (var i = 0; i < answers.length; i++) {
                 if (getCheckedValue("q" +i) === answers[i]) {
                     correct++;
-                    $("#results").html("Correct Answers: " + correct);
 
                 } else if (getCheckedValue("q" +i) !== answers[i]) {
                     incorrect++;
-                    $("#results").html("Incorrect Answers: " + incorrect);
+                    
 
                 } else {
                     notAnswered++;
-                     $("#results").html("Unanswered: " + notAnswered);
                 }
             }
         }
+
+        $("#results").html("Correct Answers: " + correct + "<br>");
+        $("#results").append("Incorrect Answers: " + incorrect + "<br>");
+        $("#results").append("Unanswered: " + notAnswered + "<br>");
 });
+
+   
    

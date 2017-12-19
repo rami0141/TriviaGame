@@ -1,10 +1,78 @@
-.jumbotron {
+
+
+body {
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
 }
+
+.instructions {
+	font-family: 'Handlee', cursive;
+	font-size: 30px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid black;
+}
+
+.paws {
+	height:150px;
+	width:200px;
+	margin-top: 25px;
+	padding-bottom: 20px;
+}
+
+.dogs {
+	height: 500px;
+	width: 700px;
+	margin-top: 20px;
+}
+
 .container {
-	text-align: center;
+	background-color: rgb(245, 247, 254);
 }
 
 #results {
 	text-align: center;
+	font-family: 'Handlee', cursive;
+	font-size: 40px;
+	margin-top:40px;
+	margin-bottom: 50px;
+	padding: 20px;
+	height: 100%;
+	width:100%;
+}
+
+.timer {
+	color: red;
+	font-family: 'Roboto', sans-serif;
+}
+
+.question {
+	font-family: 'Handlee', cursive;
+	font-size: 22px;
+}
+
+.answers {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+}
+
+#done {
+	margin: 20px;
+	width: 200px;
+}
+
+
+footer {
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 70px;
+	width: 100%;
+	clear: both;
+ 	background: #666666;	
+ 	color: white;
+ 	bottom: 0;
+ 	border-top: 8px solid #00b8d4;
+ 	margin-top: 30px;
+ 	font-family: 'Roboto', sans-serif;
 }
