@@ -4,6 +4,11 @@ $(document).ready(function() {
     $("#results").hide();
     $("footer").hide();
 
+    var answers = ["c", "d", "a", "d", "b", "a", "d", "b", "c", "a"];
+    var correct = 0;
+    var incorrect = 0;
+    var notAnswered = 0;
+
 
 //CLICK START BUTTON -- CONTAINER SHOWS AND COUNTER STARTS
     $(".btn").click(function() {
@@ -49,43 +54,33 @@ $(document).ready(function() {
         $(".container").hide();
         $("#results").fadeIn();
         $("footer").hide();
-
+        console.log(correct)
+        //console.log(val)
     })
 
 //QUESTIONS AND ANSWERS 
-    var answers = ["c", "d", "a", "d", "b", "a", "d", "b", "c", "a"];
-    var correct = 0;
-    var incorrect = 0;
-    var notAnswered = 0;
-
-    function getCheckedValue( radioName ) {
-        var radios = document.getElementsByName( radioName ); // Get radio group by-name
-        
-        for(var y = 0; y < radios.length; y++) {
-            if(radios[y].checked) return radios[y].value; // return the checked value
-        }
-    }
-
 
     function result() {
 
             for (var i = 0; i < answers.length; i++) {
-                if (getCheckedValue("q" +i) === answers[i]) {
+                var val = $("input[name='q" + i + "']:checked").val()
+                console.log(val)
+                if (val === answers[i]) {
                     correct++;
-
-                } else if (getCheckedValue("q" +i) !== answers[i]) {
+                } 
+                else if(typeof val === 'string' && val !== answers[i]){
                     incorrect++;
-                    
-
-                } else {
+                }
+                else {
                     notAnswered++;
                 }
             }
-        }
-
         $("#results").html("Correct Answers: " + correct + "<br>");
         $("#results").append("Incorrect Answers: " + incorrect + "<br>");
         $("#results").append("Unanswered: " + notAnswered + "<br>");
+        }
+
+
 });
 
    
